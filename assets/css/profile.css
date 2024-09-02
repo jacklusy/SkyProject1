@@ -42,7 +42,8 @@
   font-size: 15px;
 }
 .history .card-deck {
-  height: 300px !important;
+  width: 90%;
+  margin: auto;
 }
 /* Pending */
 

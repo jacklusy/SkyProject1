@@ -14,25 +14,27 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="../index.html"
-            >Home</a
+          <a class="nav-link" id="nav-home" href="../index.html">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" id="nav-profile" href="../Pages/Profile.html"
+            >Profiles</a
           >
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="../Pages/Profile.html">Profiles</a>
+          <a class="nav-link" id="nav-reports" href="../Pages/Request.html"
+            >Reports</a
+          >
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="../Pages/Request.html">Reports</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Settings</a>
+          <a class="nav-link" id="nav-settings" href="#">Settings</a>
         </li>
       </ul>
       <div class="d-flex">
-        <a href="javaScript:void(0)" class="nav-link me-4">
+        <a href="javascript:void(0)" class="nav-link me-4">
           <i class="fa-regular fa-bell"></i>
         </a>
-        <a href="javaScript:void(0)" class="nav-link">
+        <a href="javascript:void(0)" class="nav-link">
           <img
             src="../assets/images/Default.jpg"
             class="img-size rounded-circle"
@@ -43,3 +45,29 @@
     </div>
   </div>
 </nav>
+<script>
+  $(document).ready(function () {
+    var currentPath = window.location.pathname;
+
+    // Normalize the current path
+    if (currentPath.startsWith("/")) {
+      currentPath = currentPath.substring(1); // Remove leading slash for comparison
+    }
+
+    $(".navbar-nav .nav-link").each(function () {
+      var linkPath = $(this).attr("href");
+      if (linkPath.startsWith("../")) {
+        linkPath = linkPath.substring(3);
+      }
+
+      if (
+        linkPath === currentPath ||
+        (linkPath === "" && currentPath === "index.html")
+      ) {
+        $(this).addClass("active");
+      } else {
+        $(this).removeClass("active");
+      }
+    });
+  });
+</script>
