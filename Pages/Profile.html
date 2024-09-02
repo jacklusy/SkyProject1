@@ -25,52 +25,18 @@
     ></script>
 
     <!-- CSS -->
-    <link rel="stylesheet" href="./assets/css/style.css" />
+    <link rel="stylesheet" href="../assets/css/style.css" />
+
+    <!-- jquery -->
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
+      integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
   </head>
   <body>
-    <nav class="navbar navbar-expand-lg bg-body-tertiary">
-      <div class="container-fluid">
-        <button
-          class="navbar-toggler"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#navbarSupportedContent"
-          aria-controls="navbarSupportedContent"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-            <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="#">Home</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Profiles</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Reports</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Settings</a>
-            </li>
-          </ul>
-          <div class="d-flex">
-            <a href="javaScript:void(0)" class="nav-link me-4">
-              <i class="fa-regular fa-bell"></i>
-            </a>
-            <a href="javaScript:void(0)" class="nav-link">
-              <img
-                src="./assets/images/Default.jpg"
-                class="img-size rounded-circle"
-                alt=""
-              />
-            </a>
-          </div>
-        </div>
-      </div>
-    </nav>
+    <div id="navbar-placeholder"></div>
 
     <!-- Container -->
     <div class="container">
@@ -78,7 +44,7 @@
         <div class="info profile-container">
           <div class="d-flex justify-content-between p-3">
             <div class="d-flex justify-content-between info-part1">
-              <img src="./assets/images/Default.jpg" alt="" />
+              <img src="../assets/images/Default.jpg" alt="" />
               <div class="info-part1-b ms-2">
                 <h6>Ahmad Azmi</h6>
                 <p class="major">Marketing Department</p>
@@ -223,7 +189,7 @@
         <div class="card-deck d-flex justify-content-start">
           <div class="card">
             <img
-              src="./assets/images/Default.jpg"
+              src="../assets/images/Default.jpg"
               class="card-img-top rounded-circle mx-auto mt-3"
               alt="User Image"
               style="width: 100px"
@@ -250,7 +216,7 @@
           </div>
           <div class="card ms-4">
             <img
-              src="./assets/images/Default.jpg"
+              src="../assets/images/Default.jpg"
               class="card-img-top rounded-circle mx-auto mt-3"
               alt="User Image"
               style="width: 100px"
@@ -282,7 +248,13 @@
         </div>
       </div>
     </div>
-
-    <div class="w-100 p-5 footer"></div>
+    <div id="footer-placeholder"></div>
+    <script>
+      // Load the header and footer
+      $(document).ready(function () {
+        $("#navbar-placeholder").load("../body/navbar.html");
+        $("#footer-placeholder").load("../body/footer.html");
+      });
+    </script>
   </body>
 </html>

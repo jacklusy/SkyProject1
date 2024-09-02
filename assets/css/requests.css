@@ -2,3 +2,13 @@
   font-size: 30px;
   color: #247f3e;
 }
+.Requests i.fa-magnifying-glass {
+  font-size: 20px;
+  color: #247f3e;
+}
+#load-data {
+  height: auto;
+}
+.select-all {
+  color: #6c757d;
+}

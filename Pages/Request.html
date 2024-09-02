@@ -26,51 +26,17 @@
 
     <!-- CSS -->
     <link rel="stylesheet" href="../assets/css/style.css" />
+
+    <!-- jquery -->
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
+      integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
   </head>
   <body>
-    <nav class="navbar navbar-expand-lg bg-body-tertiary">
-      <div class="container-fluid">
-        <button
-          class="navbar-toggler"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#navbarSupportedContent"
-          aria-controls="navbarSupportedContent"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-            <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="#">Home</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Profiles</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Reports</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Settings</a>
-            </li>
-          </ul>
-          <div class="d-flex">
-            <a href="javaScript:void(0)" class="nav-link me-4">
-              <i class="fa-regular fa-bell"></i>
-            </a>
-            <a href="javaScript:void(0)" class="nav-link">
-              <img
-                src="./assets/images/Default.jpg"
-                class="img-size rounded-circle"
-                alt=""
-              />
-            </a>
-          </div>
-        </div>
-      </div>
-    </nav>
+    <div id="navbar-placeholder"></div>
 
     <!-- Vacation Requests -->
     <div class="container mt-4">
@@ -88,7 +54,7 @@
                 type="search"
                 name="search"
                 id="search"
-                placeholder="search..."
+                placeholder="Search..."
                 class="ms-2"
               />
             </form>
@@ -98,134 +64,29 @@
         <div class="d-flex justify-content-between mb-4">
           <div>
             <input type="checkbox" id="select-all" />
-            <label for="select-all">Select All</label>
+            <label for="select-all" class="select-all">Select All</label>
           </div>
           <div>
             <i class="fa-solid fa-filter"></i>
           </div>
         </div>
         <!-- Cards -->
-        <div class="card-deck d-flex justify-content-between">
-          <div class="card">
-            <img
-              src="../assets/images/Default.jpg"
-              class="card-img-top rounded-circle mx-auto mt-3"
-              alt="User Image"
-              style="width: 100px"
-            />
-            <div class="card-body text-center">
-              <h5 class="card-title">Ahmad Attar</h5>
-              <div class="p-3">
-                <ul>
-                  <li class="card-text">Submitted on:</li>
-                  <li class="card-bold">1/3/2024</li>
-                </ul>
-                <ul>
-                  <li class="card-text">Duration:</li>
-                  <li class="card-bold">2 Weeks (1/4/2023 - 14/4/2023)</li>
-                </ul>
-                <ul>
-                  <li class="card-text">Salary:</li>
-                  <li class="card-bold">1000 AED</li>
-                </ul>
-              </div>
-              <div class="d-flex justify-content-around">
-                <button class="btn btn-outline-success">Decline</button>
-                <button class="btn btn-outline-success approve">Approve</button>
-              </div>
-            </div>
-          </div>
-          <div class="card">
-            <img
-              src="../assets/images/Default.jpg"
-              class="card-img-top rounded-circle mx-auto mt-3"
-              alt="User Image"
-              style="width: 100px"
-            />
-            <div class="card-body text-center">
-              <h5 class="card-title">Ahmad Attar</h5>
-              <div class="p-3">
-                <ul>
-                  <li class="card-text">Submitted on:</li>
-                  <li class="card-bold">1/3/2024</li>
-                </ul>
-                <ul>
-                  <li class="card-text">Duration:</li>
-                  <li class="card-bold">2 Weeks (1/4/2023 - 14/4/2023)</li>
-                </ul>
-                <ul>
-                  <li class="card-text">Salary:</li>
-                  <li class="card-bold">1000 AED</li>
-                </ul>
-              </div>
-              <div class="d-flex justify-content-around">
-                <button class="btn btn-outline-success">Decline</button>
-                <button class="btn btn-outline-success approve">Approve</button>
-              </div>
-            </div>
-          </div>
-          <div class="card">
-            <img
-              src="../assets/images/Default.jpg"
-              class="card-img-top rounded-circle mx-auto mt-3"
-              alt="User Image"
-              style="width: 100px"
-            />
-            <div class="card-body text-center">
-              <h5 class="card-title">Ahmad Attar</h5>
-              <div class="p-3">
-                <ul>
-                  <li class="card-text">Submitted on:</li>
-                  <li class="card-bold">1/3/2024</li>
-                </ul>
-                <ul>
-                  <li class="card-text">Duration:</li>
-                  <li class="card-bold">2 Weeks (1/4/2023 - 14/4/2023)</li>
-                </ul>
-                <ul>
-                  <li class="card-text">Salary:</li>
-                  <li class="card-bold">1000 AED</li>
-                </ul>
-              </div>
-              <div class="d-flex justify-content-around">
-                <button class="btn btn-outline-success">Decline</button>
-                <button class="btn btn-outline-success approve">Approve</button>
-              </div>
-            </div>
-          </div>
-          <div class="card">
-            <img
-              src="../assets/images/Default.jpg"
-              class="card-img-top rounded-circle mx-auto mt-3"
-              alt="User Image"
-              style="width: 100px"
-            />
-            <div class="card-body text-center">
-              <h5 class="card-title">Ahmad Attar</h5>
-              <div class="p-3">
-                <ul>
-                  <li class="card-text">Submitted on:</li>
-                  <li class="card-bold">1/3/2024</li>
-                </ul>
-                <ul>
-                  <li class="card-text">Duration:</li>
-                  <li class="card-bold">2 Weeks (1/4/2023 - 14/4/2023)</li>
-                </ul>
-                <ul>
-                  <li class="card-text">Salary:</li>
-                  <li class="card-bold">1000 AED</li>
-                </ul>
-              </div>
-              <div class="d-flex justify-content-around">
-                <button class="btn btn-outline-success">Decline</button>
-                <button class="btn btn-outline-success approve">Approve</button>
-              </div>
-            </div>
-          </div>
-        </div>
+        <div
+          class="card-deck d-flex justify-content-between flex-wrap align-content-between gap-3"
+          id="load-data"
+        ></div>
       </div>
     </div>
+    <div id="footer-placeholder"></div>
 
-    <div class="w-100 p-5 footer"></div>
+    <script src="../assets/js/requestSearch.js"></script>
+
+    <script>
+      // Load the header and footer
+      $(document).ready(function () {
+        $("#navbar-placeholder").load("../body/navbar.html");
+        $("#footer-placeholder").load("../body/footer.html");
+      });
+    </script>
   </body>
 </html>
