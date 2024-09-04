@@ -106,7 +106,6 @@ $(document).ready(function () {
       salary: "1500 AED",
     },
   ];
-
   // Function to display cards
   function displayCards(filteredData) {
     $("#load-data").html("");
@@ -114,96 +113,52 @@ $(document).ready(function () {
 
     filteredData.forEach(function (request) {
       html += `<div class="card">
-               <div class="form-check">
-                <input type="checkbox" class="form-check-input request-checkbox" />
+          <img src="${request.image}" class="card-img-top rounded-circle mx-auto mt-3" alt="User Image" style="width: 100px" />
+          <div class="card-body text-center">
+              <h5 class="card-title">${request.title}</h5>
+              <div class="p-3">
+                  <ul>
+                      <li class="card-text">Submitted on:</li>
+                      <li class="card-bold">${request.submissionDate}</li>
+                  </ul>
+                  <ul>
+                      <li class="card-text">Duration:</li>
+                      <li class="card-bold">${request.duration}</li>
+                  </ul>
+                  <ul>
+                      <li class="card-text">Salary:</li>
+                      <li class="card-bold">${request.salary}</li>
+                  </ul>
               </div>
-
-            <img src="${request.image}" class="card-img-top rounded-circle mx-auto mt-3" alt="User Image" style="width: 100px" />
-            <div class="card-body text-center">
-                <h5 class="card-title">${request.title}</h5>
-                <div class="p-3">
-                    <ul>
-                        <li class="card-text">Submitted on:</li>
-                        <li class="card-bold">${request.submissionDate}</li>
-                    </ul>
-                    <ul>
-                        <li class="card-text">Duration:</li>
-                        <li class="card-bold">${request.duration}</li>
-                    </ul>
-                    <ul>
-                        <li class="card-text">Salary:</li>
-                        <li class="card-bold">${request.salary}</li>
-                    </ul>
-                </div>
-                <div class="d-flex justify-content-around">
-                    <button class="btn btn-outline-success">Decline</button>
-                    <button class="btn btn-outline-success approve">Approve</button>
-                </div>
-            </div>
-        </div>`;
+              <div class="d-flex justify-content-around">
+                  <button class="btn btn-outline-success">Decline</button>
+                  <button class="btn btn-outline-success approve">Approve</button>
+              </div>
+          </div>
+      </div>`;
     });
 
     $("#load-data").html(html);
   }
 
-  displayCards(data);
+  // Display only the first 4 items when the page loads
+  displayCards(data.slice(0, 4));
+
   // Search function
   $("#search").on("input", function () {
     var inputValue = $(this).val().toLowerCase();
 
-    var filteredData = data.filter(function (request) {
-      return (
-        request.title.toLowerCase().includes(inputValue) ||
-        request.submissionDate.toLowerCase().includes(inputValue) ||
-        request.duration.toLowerCase().includes(inputValue) ||
-        request.salary.toLowerCase().includes(inputValue)
-      );
-    });
+    var filteredData = data
+      .filter(function (request) {
+        return (
+          request.title.toLowerCase().includes(inputValue) ||
+          request.submissionDate.toLowerCase().includes(inputValue) ||
+          request.duration.toLowerCase().includes(inputValue) ||
+          request.salary.toLowerCase().includes(inputValue)
+        );
+      })
+      .slice(0, 4);
 
     displayCards(filteredData);
   });
-  // Select All functionality
-  $("#select-all").on("change", function () {
-    $(".request-checkbox").prop("checked", $(this).is(":checked"));
-  });
-
-  // Individual checkbox functionality
-  $(document).on("change", ".request-checkbox", function () {
-    if (!$(this).is(":checked")) {
-      $("#select-all").prop("checked", false);
-    } else if (
-      $(".request-checkbox:checked").length === $(".request-checkbox").length
-    ) {
-      $("#select-all").prop("checked", true);
-    }
-  });
-
-  // Pagination setup
-  const itemsPerPage = 8;
-  const totalPages = Math.ceil(data.length / itemsPerPage);
-
-  function displayPage(pageNumber) {
-    const startIndex = (pageNumber - 1) * itemsPerPage;
-    const endIndex = startIndex + itemsPerPage;
-    displayCards(data.slice(startIndex, endIndex));
-  }
-
-  function createPagination() {
-    let paginationHtml = '<ul class="pagination">';
-    for (let i = 1; i <= totalPages; i++) {
-      paginationHtml += `<li class="page-item"><a class="page-link" href="#">${i}</a></li>`;
-    }
-    paginationHtml += "</ul>";
-    $("#pagination").html(paginationHtml);
-  }
-
-  createPagination();
-
-  $(document).on("click", ".page-link", function (e) {
-    e.preventDefault();
-    const pageNumber = $(this).text();
-    displayPage(parseInt(pageNumber));
-  });
-
-  displayPage(1);
 });

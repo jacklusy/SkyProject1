@@ -40,7 +40,9 @@
 
     <!-- Vacation Requests -->
     <div class="container mt-4">
+      <!-- Vacation Requests Header -->
       <div class="p-4 pb-0">
+        <!-- Header with title, search, and select all -->
         <div class="d-flex justify-content-between Requests">
           <div class="d-flex justify-content-start align-items-center">
             <i class="fa-solid fa-list-check" aria-hidden="true"></i>
@@ -61,6 +63,8 @@
           </div>
         </div>
         <hr />
+
+        <!-- Select All and Filter -->
         <div class="d-flex justify-content-between mb-4">
           <div>
             <input type="checkbox" id="select-all" />
@@ -70,13 +74,15 @@
             <i class="fa-solid fa-filter"></i>
           </div>
         </div>
-        <!-- Cards -->
-        <div
-          class="card-deck d-flex justify-content-between flex-wrap gap-3"
-          id="load-data"
-        ></div>
+
+        <!-- Cards Section -->
+        <div class="card-deck d-flex flex-wrap gap-5" id="load-data"></div>
+
+        <!-- Pagination -->
+        <div id="pagination" class="d-flex justify-content-center mt-4"></div>
       </div>
     </div>
+
     <div id="footer-placeholder"></div>
 
     <script src="../assets/js/requestSearch.js"></script>
